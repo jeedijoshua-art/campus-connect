@@ -4,6 +4,7 @@ const cors = require('cors');
 const http = require('http');
 const { Server } = require('socket.io');
 const connectDB = require('./config/db');
+const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 // Connect to Database
 connectDB();
@@ -57,6 +58,9 @@ app.use('/uploads', express.static('uploads'));
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
+
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
