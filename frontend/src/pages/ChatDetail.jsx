@@ -28,7 +28,8 @@ const ChatDetail = () => {
       setMessages(res.data);
     });
 
-    const newSocket = io(`http://${window.location.hostname}:5000`);
+    const socketUrl = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`;
+    const newSocket = io(socketUrl);
     setSocket(newSocket);
 
     newSocket.on('connect', () => {

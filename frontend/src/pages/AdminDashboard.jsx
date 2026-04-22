@@ -25,7 +25,8 @@ const AdminDashboard = () => {
 
   const handleExport = () => {
     // Navigate to the export endpoint which downloads the excel file
-    window.location.href = 'http://localhost:5000/api/admin/export?token=' + localStorage.getItem('token');
+    const baseURL = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : 'http://localhost:5000/api';
+    window.location.href = `${baseURL}/admin/export?token=` + localStorage.getItem('token');
   };
 
   const statCards = [
