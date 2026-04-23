@@ -20,7 +20,6 @@
     "react-router-dom": "^7.14.0",
     "socket.io-client": "^4.8.3",
     "tailwind-merge": "^3.5.0",
-    "vite-plugin-pwa": "^0.20.0",
     "zustand": "^5.0.12"
   },
   "devDependencies": {
