@@ -10,7 +10,7 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  cloud_name: process.env.dexnv0koo,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
@@ -43,7 +43,7 @@ router.post('/upload', protect, upload.single('file'), async (req, res) => {
     }
 
     const fileUrl = req.file.path;
-    
+
     const newFile = await File.create({
       name: req.body.name || req.file.originalname,
       originalName: req.file.originalname,
